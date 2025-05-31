@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
+  color: #d4af37;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #1c1c1c, #292929, #1a1a1a, #121212);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid #d4af37;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #d4af37;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #1f1f1f;
+  color: #f0e6d2;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid #d4af37;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #d4af37;
+  border: none;
+  border-radius: 6px;
+  color: #0f0f0f;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #b7962b;
+}
+
+#result {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+}

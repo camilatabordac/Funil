@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belmond - Funil de Conversão</title>
+  <link rel="stylesheet" href="C:\Users\ctabc\OneDrive\Área de Trabalho\style.css"/>
+</head>
+<body>
+  <div class="background-animation"></div>
+
+  <div class="container">
+    <h1>Belmond - Funil de Conversão</h1>
+
+    <form id="conversionForm">
+      <label>Leads recebidos:</label>
+      <input type="number" id="leads" placeholder="Ex: 100" required />
+
+      <label>% que respondem:</label>
+      <input type="number" id="response" value="60" required />
+
+      <label>% que agendam:</label>
+      <input type="number" id="schedule" value="50" required />
+
+      <label>% que comparecem:</label>
+      <input type="number" id="attendance" value="80" required />
+
+      <label>% que fecham:</label>
+      <input type="number" id="closing" value="40" required />
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById("conversionForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const leads = +document.getElementById("leads").value;
+      const response = +document.getElementById("response").value;
+      const schedule = +document.getElementById("schedule").value;
+      const attendance = +document.getElementById("attendance").value;
+      const closing = +document.getElementById("closing").value;
+
+      const result =
+        leads *
+        (response / 100) *
+        (schedule / 100) *
+        (attendance / 100) *
+        (closing / 100);
+
+      document.getElementById("result").innerText =
+        `Leads que devem fechar: ${result.toFixed(1)}`;
+    });
+  </script>
+</body>
+</html>
